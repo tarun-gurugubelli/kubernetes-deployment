@@ -1,4 +1,4 @@
-FROM centos:stream8
+FROM centos:centos8
 LABEL Author="tarungurugubelli@outlook.com" 
 RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 RUN yum install -y httpd zip unzip
