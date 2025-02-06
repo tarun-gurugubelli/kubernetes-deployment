@@ -8,5 +8,12 @@ node{
             sh 'scp -r /var/lib/jenkins/workspace/k8-demo/* ubuntu@172.31.87.81:/home/ubuntu'
         }
     }
+    stage('Building Docker Image'){
+        sshagent(['ansible']) {
+            sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.87.81 cd /home/ubuntu'
+            sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.87.81 docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+
+        }  
+    }
     
 }
