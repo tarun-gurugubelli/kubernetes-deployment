@@ -1,6 +1,6 @@
 FROM centos:latest
 LABEL Author="tarungurugubelli@outlook.com" 
-RUN apt install -y httpd zip unzip
+RUN yum install -y httpd zip unzip
 RUN wget -O finexo.zip https://www.free-css.com/assets/files/free-css-templates/download/page296/finexo.zip
 RUN cp finexo.zip /var/www/html/
 WORKDIR /var/www/html/
