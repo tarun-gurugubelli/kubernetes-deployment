@@ -7,4 +7,4 @@ RUN unzip finexo.zip
 RUN cp -rvf finexo/* .
 RUN rm -rf finexo finexo.zip
 CMD [ "/usr/sbin/httpd","-D","FOREGROUND" ]
-EXPOSE 80
+EXPOSE 80 22
